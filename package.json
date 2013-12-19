@@ -1,0 +1,21 @@
+{
+  "name": "web-site-gerzhan-tk",
+  "version": "0.0.0",
+  "description": "Static Web-site www.gerzhan.tk for Heroku hosting",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gerzhan/herokuStaticSite_GerzhanTk.git"
+  },
+  "keywords": [
+    "heroku"
+  ],
+  "author": "Gerzhan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gerzhan/herokuStaticSite_GerzhanTk/issues"
+  }
+}

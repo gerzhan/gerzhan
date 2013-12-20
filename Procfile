@@ -1,1 +1,1 @@
-wep: node web.js
+web: node web.js

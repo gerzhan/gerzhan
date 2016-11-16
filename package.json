@@ -1,9 +1,11 @@
 {
   "name": "web-site-gerzhan-tk",
   "version": "0.0.0",
-  "description": "Static Web-site www.gerzhan.tk for Heroku hosting",
+  "description": "Static Web-site gerzhan.ru",
   "main": "web.js",
   "scripts": {
+    "start": "nodemon -L --config ./config/nodemon.json web.js",
+    "dev": "node web.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,18 +15,17 @@
   "keywords": [
     "heroku"
   ],
-  "author": "Gerzhan",
+  "author": "Nikolay Gerzhan <nikolay.gerzhan@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gerzhan/herokuStaticSite_GerzhanTk/issues"
   },
   "dependencies": {
-    "logfmt": "~0.18.1",
-    "express": "~3.4.7"
+    "hapi": "^15.2.0",
+    "inert": "^4.0.2",
+    "vision": "^4.1.0"
   },
-  
   "engines": {
-    "node": "0.10.x"
+    "node": "4.4.x"
   }
- 
 }

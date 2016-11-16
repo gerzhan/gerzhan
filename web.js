@@ -1,15 +1,31 @@
-var express = require('express');
-var logfmt= require('logfmt');
+const Hapi = require('hapi');
+const server = new Hapi.Server();
+const path = require('path');
+const port_ = process.env.PORT || 5000;
 
-var app = express();
+server.connection({port: port_}); 
+ 
+server.register([require('inert')],
+    (err)=>{
+        if(err){
+            console.log(`Server run error`,err);
+            throw err; 
+        }
+     server.route({
+         path: '/{params*}',
+         method: 'GET',
+         config: {
+             handler: {
+                 directory: {
+                     path: path.join(__dirname,'public')
+                 }
+             }
+         }
+     });
 
-app.use(logfmt.requestLogger());
-
-app.get('/',function(req,res){
-        res.send('Start static web-site work!');
-    });
-    
-var port = process.env.PORT || 5000;
-app.listen(port, function(){
-   console.log("Listening on"+port);  
-});
+     server.start(()=>{
+         console.log(`Server run ${server.info.uri}`);
+     });   
+        
+    }
+);

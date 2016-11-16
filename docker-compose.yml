@@ -1,0 +1,8 @@
+web:
+  build: .
+  volumes:
+    - "./:/src"
+  ports:
+    - "3000:5000"
+
+    
